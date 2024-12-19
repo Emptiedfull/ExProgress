@@ -1,0 +1,24 @@
+.Title{
+ font-size: 2rem;
+}
+
+.bar{
+    width: 100%;
+
+}
+
+.barObj{
+    width: 50vw;
+    height: 6vh;
+    border-style: double;
+    border-radius: 20px;
+    border-color: black;
+    border-width: 10px;
+}
+
+.progress{
+
+    height: 100%;
+    border-radius: 10px;
+    background-color: aqua;
+}

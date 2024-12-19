@@ -1,0 +1,23 @@
+{
+    "version":"0.2.0",
+    "configurations":[
+        {
+            "name":"Py: Uvicorn",
+            "type":"python",
+            "request":"launch",
+            "program": "${workspaceFolder}/server.py",
+            "args":[
+                "run",
+                "server:app",
+                "--reload"
+            ],
+            "jinja":true,
+            "console":"integratedTerminal",
+            "env":{
+                "PYTHONUMBUFFERED":"1"
+            }
+            
+
+        }
+    ]
+}
