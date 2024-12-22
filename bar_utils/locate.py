@@ -1,7 +1,7 @@
 import json
 import numpy as np
 import asyncio
-from conversion import convert
+from bar_utils.conversion import convert
 
 
 with open("mappings.json","r") as f:

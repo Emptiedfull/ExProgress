@@ -1,7 +1,7 @@
-from conversion import convert
+from bar_utils.conversion import convert
 import timeit,atexit,asyncio
 import numpy as np
-from ai import mass,log_map
+
 
 
 
@@ -42,9 +42,9 @@ def mapping_alt(con):
 
 
 if __name__ == "__main__":
-
+    from ai import mass,log_map
     # p_values = np.random.rand(10)
-    p_values = np.random.rand(100)
+    p_values = np.random.rand(1000)
     results = [mapping_alt(convert(p)) for p in p_values]
     asyncio.run(mass(results))
 

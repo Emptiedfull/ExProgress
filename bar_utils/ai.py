@@ -55,7 +55,8 @@ async def gen(msg, val):
             mappings[val] = out
             print("passed",msg,out)
             break
-        except:
+        except Exception as e:
+          
            print("retrying",msg)
            await asyncio.sleep(30)
 

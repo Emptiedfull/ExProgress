@@ -3,20 +3,21 @@
     <head>
         <script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.js" integrity="sha384-oeUn82QNXPuVkGCkcrInrS1twIxKhkZiFfr2TdiuObZ3n3yIeMiqcRzkIcguaof1" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/htmx-ext-ws@2.0.1/ws.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
         <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
     </head>
     <body>
-        <div>
+        <div class="Title">
             <h1>
                 ExProgress
             </h1>
         </div>
-        <div class="bar">
-            <div class="progress"> 
+        {% with %}
+            {% set bar_id = 1 %}
+            {% include "partials/_bar.jinja" %}
+        {% endwith %}
 
-            </div>
-
-        </div>
+      
 
     </body>
     <script src="{{ url_for('static', path='/main.js') }}"></script>
