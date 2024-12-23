@@ -38,7 +38,12 @@ def mapping_alt(con):
     months = int((con - years) * 12)
     days = int((con - years - months / 12) * 365)
     hours = int(days * 24)
-    return [f'{years} years {months} months {days} days {hours} hours',con]
+
+    years_txt = str(years) + " years" if years != 0 else ""
+    months_txt = str(months) + " months" if months != 0 else ""
+    days_txt = str(days) + " days" if days != 0 else ""
+    hours_txt = str(hours) + " hours" if hours != 0 else ""
+    return [f'{years_txt} {months_txt} {days_txt} {hours_txt}',con]
 
 
 if __name__ == "__main__":

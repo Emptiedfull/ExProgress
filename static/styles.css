@@ -3,6 +3,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    
 }
 
 body{
@@ -11,19 +14,35 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #342e37;color:#dff8eb
 }
 
 .Title{
     font-size: 3rem;
+    color:#9381FF;
 }
 
 .bar-container{
-    width: 100%;
+    width: 50%;
     
     display: flex;
     flex-direction: column;
     align-items: center;
     gap:10px
+}
+
+@media (max-width:760px){
+    .Title{
+        font-size: 2rem;
+    }
+
+    .bar-container{
+        width: 80%;
+    }
+
+    .bar{
+        height: 20px;
+    }
 }
 
 .bar{
@@ -36,8 +55,8 @@ body{
 
 .progress{
     height: 100%;
-    background-color: aqua;
-    border-radius: 5px;
+    background-color: #FFBFA0;
+    border-radius: 4px;
     width: 0%;
     transition: width 0.5s ease;
 }
@@ -45,10 +64,14 @@ body{
 .controls{
     display: flex;
     width: 100%;
+    flex-wrap: wrap;
     justify-content: space-around;
+    gap: 1rem;
+
 }
 
 button{
+    width: 20%;
     border-style: none;
     border-radius: 3px;
     padding:1rem
@@ -92,3 +115,10 @@ button{
     cursor: pointer; 
 }
   
+.active {
+    background-color: #D9EAFD;
+}
+
+.inactive { 
+    background-color: #9AA6B2;
+}
