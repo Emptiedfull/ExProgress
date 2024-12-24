@@ -4,7 +4,7 @@ The perfect way to pass time while watching your 200gb file transfer go through
 
 ExProgress is a demonstration based on the xkcd comic "Backwards in Time". It features a progress bar that represents different periods in history, with each point on the progress bar corresponding to a specific time in history.
 
-[Click here to expereince]()
+[Click here to expereince](empy.my/exprogress)
 
 ## Installation
 

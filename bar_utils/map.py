@@ -1,4 +1,4 @@
-from conversion import convert
+from bar_utils.conversion import convert
 import timeit,atexit,asyncio
 import numpy as np
 

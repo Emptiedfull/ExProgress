@@ -67,7 +67,7 @@ class bar:
                 "interval":self.interval
             }
 
-            print(self.speed,self.interval)
+            
             await self.socket.send_json(message)
             await asyncio.sleep(self.interval)
 
@@ -281,4 +281,4 @@ async def temp(request: Request):
 
 if __name__ == "__main__":
     import uvicorn 
-    uvicorn.run(app="server:app",reload=True,port=8000)
+    uvicorn.run(app="server:app",reload=False,port=42111,host="0.0.0.0")
