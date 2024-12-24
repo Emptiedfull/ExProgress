@@ -13,7 +13,7 @@ api = os.getenv("ANTHROPIC")
 client = AsyncAnthropic(
     api_key=api
 )
-model_name = "claude-3-5-haiku-20241022"
+model_name = "claude-3-5-sonnet-latest"
 
 with open('system.txt', "r") as f:
     sys = f.read()
@@ -39,6 +39,9 @@ except Exception:
 
 
 async def gen(msg, val):
+
+    if not msg.strip():
+        return
   
     if mappings.get(str(val)):
        return

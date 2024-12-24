@@ -1,10 +1,24 @@
 
+:root{
+    --tea-green: hsla(94, 78%, 82%, 1);
+    --jet: hsla(34, 7%, 19%, 1);
+    --glaucous: hsla(233, 21%, 56%, 1);
+    --atomic-tangerine: hsla(19, 90%, 70%, 1);
+    --columbia-blue: hsla(207, 51%, 83%, 1);
+    --white:hsla(122, 33%, 84%,1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     text-align: center;
     font-family: 'Poppins', sans-serif;
+    
     
 }
 
@@ -14,16 +28,31 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #342e37;color:#dff8eb
+    background-color: var(--jet);
+    color:var(--white)
 }
 
 .Title{
     font-size: 3rem;
-    color:#9381FF;
+   
+}
+
+.Title h1{
+    color:var(--glaucous);
+}
+
+.Title h2{
+    font-size: 1rem;
+    
+}
+
+a{
+    text-decoration: none;
+    color: #85D6BB;
 }
 
 .bar-container{
-    width: 50%;
+    width: 60%;
     
     display: flex;
     flex-direction: column;
@@ -55,7 +84,7 @@ body{
 
 .progress{
     height: 100%;
-    background-color: #FFBFA0;
+    background-color: var(--atomic-tangerine);
     border-radius: 4px;
     width: 0%;
     transition: width 0.5s ease;
@@ -70,6 +99,27 @@ body{
 
 }
 
+.text-cont{
+    width: 70%;
+    
+}
+
+p{
+    text-align: justify;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.formula{
+    margin-top: 1rwem;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--tea-green);
+}
+
+
+
 button{
     width: 20%;
     border-style: none;
@@ -82,6 +132,7 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 0.2rem;
 }
 
 .slider{
@@ -93,6 +144,11 @@ button{
 
 .slider label{
     font-size: 1.2rem;
+    
+}
+
+.slider label span{
+    color:var(--tea-green)
 }
 
 .slider input{
@@ -102,17 +158,21 @@ button{
     height: 50%;
     background-color: #d3d3d3;
     opacity: 0.5;
-    height: 20px;
+    height: 15px;
 }
 
 .slider input::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 20px; 
-    height: 20px; 
-    background-color: rgb(74, 162, 250);
+    height: 15px; 
+    background-color: var(--glaucous);
    
     cursor: pointer; 
+}
+
+#intro{
+    margin-top: 2rem;
 }
   
 .active {
@@ -121,4 +181,50 @@ button{
 
 .inactive { 
     background-color: #9AA6B2;
+}
+
+.info-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.info-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 0.4rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    font-size: 0.8rem;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.info-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.detail{
+    margin-top: 4rem;
+}  
+
+.detail h1{
+    font-size: 3rem;
+    color: var(--glaucous);
+}
+
+.comic h1{
+    font-size: 3rem;
+    color: var(--glaucous);
+}
+
+.comic{
+    margin-top: 3rem;
 }

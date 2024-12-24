@@ -1,4 +1,4 @@
-from bar_utils.conversion import convert
+from conversion import convert
 import timeit,atexit,asyncio
 import numpy as np
 
@@ -37,7 +37,7 @@ def mapping_alt(con):
     years = int(con)
     months = int((con - years) * 12)
     days = int((con - years - months / 12) * 365)
-    hours = int(days * 24)
+    hours = int((con - years - months / 12 - days / 365) * 24 * 365)
 
     years_txt = str(years) + " years" if years != 0 else ""
     months_txt = str(months) + " months" if months != 0 else ""
@@ -49,6 +49,7 @@ def mapping_alt(con):
 if __name__ == "__main__":
     from ai import mass,log_map
     # p_values = np.random.rand(10)
+    
     p_values = np.random.rand(1000)
     results = [mapping_alt(convert(p)) for p in p_values]
     asyncio.run(mass(results))

@@ -5,19 +5,35 @@
         <script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.js" integrity="sha384-oeUn82QNXPuVkGCkcrInrS1twIxKhkZiFfr2TdiuObZ3n3yIeMiqcRzkIcguaof1" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/htmx-ext-ws@2.0.1/ws.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
     </head>
     <body>
         <div class="Title">
             <h1>
-                <span style="color: #dff8eb;">Ex</span>Progress
+                <span style="color: hsla(207, 51%, 83%, 1);">Ex</span>Progress
             </h1>
+            <h2>
+                Based on <a href="#comic">Backwards in Time by XKCD</a>
+            </h2>
         </div>
+        
+        
+        {% include "partials/_intro.jinja" %}
         {% with %}
             {% set bar_id = 1 %}
+            {% set slider = false %}
             {% include "partials/_bar.jinja" %}
         {% endwith %}
-
+        {% include "partials/_detail.jinja" %}
+        {% with %}
+            {% set bar_id = 2 %}
+            {% set slider = true %}
+            {% include "partials/_bar.jinja" %}
+         {% endwith %}
+        {% include "partials/_comic.jinja" %}
       
 
     </body>

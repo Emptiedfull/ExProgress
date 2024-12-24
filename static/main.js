@@ -113,25 +113,31 @@ class Bar {
     }
 
     updateState = ()=>{
-        console.log(this.state.reverse)
-        for (const key in this.state) { 
-            let btn = key + "btn"
-            let button = this[btn]
-            this.state[key] ? button.classList.add("active") : button.classList.add("inactive")
-            
-            if (this.state[key]){
-                button.classList.add("active")
-                if (button.classList.contains("inactive")){
-                    button.classList.remove("inactive")
+        try {
+            for (const key in this.state) {
+                let btn = key + "btn";
+                let button = this[btn];
+                if (!button) {
+                    console.error(`Button not found for key: ${key}`);
+                    continue;
                 }
-            }else{
-                button.classList.add("inactive")
-                if (button.classList.contains("active")){
-                    button.classList.remove("active")
+                this.state[key] ? button.classList.add("active") : button.classList.add("inactive");
+    
+                if (this.state[key]) {
+                    button.classList.add("active");
+                    if (button.classList.contains("inactive")) {
+                        button.classList.remove("inactive");
+                    }
+                } else {
+                    button.classList.add("inactive");
+                    if (button.classList.contains("active")) {
+                        button.classList.remove("active");
+                    }
                 }
+                console.log(button);
             }
-            console.log(button)
-            
+        } catch (error) {
+            console.error("An error occurred:", error);
         }
         
     }

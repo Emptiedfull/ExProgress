@@ -47,7 +47,12 @@ class bar:
     async def barTask(self):
       
         print("bartask goes hard",self.progress,self.pause_event.is_set())
-        while self.progress <100 and self.progress>0:
+        while True:
+
+            if not (self.progress <100 and self.progress>0):
+               
+                await asyncio.sleep(0.5)
+                continue
            
             await self.pause_event.wait()
             self.progress += self.speed
@@ -95,7 +100,7 @@ class bar:
         self.pause_event.set()
 
     async def resetBar(self):
-        self.progress = 0
+        self.progress = 1
         if self.bar_task:
             self.bar_task.cancel()
             self.bar_task = None
@@ -103,8 +108,10 @@ class bar:
 
     async def reverseBar(self):
         self.speed = self.speed*(-1)
+        print(self.progress)
         if self.progress > 99:
             self.progress = 99
+            print(self.progress)
 
     async def updateBar(self,settings):
         try:
