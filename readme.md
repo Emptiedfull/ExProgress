@@ -4,18 +4,15 @@ The perfect way to pass time while watching your 200gb file transfer go through
 
 ExProgress is a demonstration based on the xkcd comic "Backwards in Time". It features a progress bar that represents different periods in history, with each point on the progress bar corresponding to a specific time in history.
 
-## Features
-
-- Smooth scrolling to sections
-- Interactive progress bar
-- Mathematical notation rendering using MathJax
-- Integration with Claude AI for generating descriptions of time periods
+[Click here to expereince]()
 
 ## Installation
 
+
+
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/exprogress.git
+    git clone https://github.com/Emptiedfull/ExProgress
     ```
 2. Navigate to the project directory:
     ```sh
@@ -28,19 +25,40 @@ ExProgress is a demonstration based on the xkcd comic "Backwards in Time". It fe
 
 ## Usage
 
+### Running the web demo
+
 1. Start the server:
-    ```sh
-    python server.py
-    ```
-2. Open your web browser and navigate to `http://localhost:5000`.
 
-## Dependencies
+        ```sh
+        python server.py
+        ```
 
-- Python 3.x
-- Flask
-- Flask-SocketIO
-- MathJax
-- Font Awesome
+    or for more control
+
+        ```sh
+        uvicorn server:app --port <port> 
+        ```
+   
+2. Open your web browser and navigate to `http://localhost:<port>`.
+
+### Using as a Lib
+
+The code in /bar_utils exposes all the neccesary functions for using the tool.
+
+1. **conversion.py**: Converts progress values to years format
+
+2. **map.py**: contains the code for converting         formula     output to human readable format
+
+3. **ai.py**: contains the code for generating time period descriptions. An anthropic api key must be provided in .env for this to work.
+
+4. **locate.py**: contains code to search and locate values based on progress from an existing lookup table. Check mappings.json for example
+
+5. **utils.py**: useful code for sanitzing n sorting lookup table.
+
+
+
+
+
 
 ## Contributing
 
@@ -54,3 +72,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 - [xkcd](https://xkcd.com/) for the original comic inspiration.
 - [Claude AI](https://claude.ai) for generating descriptions of time periods.
+- [GitHub Copilot](https://github.com/features/copilot) for assisting with code suggestions.
